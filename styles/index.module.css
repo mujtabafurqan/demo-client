@@ -8,7 +8,7 @@
 
 .fullPage{
     height: 100vh;
-    background-image: url("/image.png");
+    background-image: url("/bg.gif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
