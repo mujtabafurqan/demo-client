@@ -19,6 +19,8 @@ export const authOptions: NextAuthOptions = {
       token.userRole = "admin"
       return token
     },
+  },pages: {
+    signIn: '/auth/signin',
   },
 }
 
