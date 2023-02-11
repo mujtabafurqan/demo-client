@@ -18,7 +18,7 @@ export default function IndexPage() {
         router.push('/')
     }
   //  }
-  },[])
+  },[session])
   if(!session){
     return <div>loading...</div>
   }
