@@ -9,9 +9,8 @@ export default function IndexPage() {
   const router = useRouter();
   const { data: session } = useSession()
   useEffect(()=>{
-    
+      console.log("session = ", session)
       if (!session) {
-        console.log("session = true")
         router.push('/auth/signin')
       }
     //   else{
