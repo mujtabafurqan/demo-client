@@ -13,12 +13,12 @@ export default function IndexPage() {
       if (!session) {
         router.push('/auth/signin')
       }
-    //   else{
-    //     // maybe go to login page
-    //     router.push('/login')
-    // }
+      else{
+        // maybe go to login page
+        router.push('/')
+    }
   //  }
-  },[router,session])
+  },[])
   if(!session){
     return <div>loading...</div>
   }
