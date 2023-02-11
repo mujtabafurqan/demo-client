@@ -1,23 +1,25 @@
 import Layout from "../components/layout"
 import { useSession } from "next-auth/react"
-import { useEffect } from "react"
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 import Image from "next/image"
 
 export default function IndexPage() {
-
-  // const { data: session, status } = useSession()
-  // useEffect(()=>{
+  const router = useRouter();
+  const { data: session } = useSession()
+  useEffect(()=>{
     
-  //     if (session) {
-  //       console.log("session = true")
-  //       router.push('/blogs')
-  //     }else{
-  //       // maybe go to login page
-  //       router.push('/login')
-  //   }
+      if (!session) {
+        console.log("session = true")
+        router.push('/auth/signin')
+      }
+    //   else{
+    //     // maybe go to login page
+    //     router.push('/login')
+    // }
   //  }
-  // },[router,session])
+  },[router,session])
   
   return (
     <Layout>
