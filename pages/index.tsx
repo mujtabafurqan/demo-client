@@ -20,7 +20,9 @@ export default function IndexPage() {
     // }
   //  }
   },[router,session])
-  
+  if(!session){
+    return <div>loading...</div>
+  }
   return (
     <Layout>
     </Layout>
