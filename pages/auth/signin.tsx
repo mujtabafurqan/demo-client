@@ -29,7 +29,7 @@ const Signin = ({ csrfToken, providers }) => {
               Object.values(providers).map(provider => (
                 <div key={provider.name} style={{ marginBottom: 0 }}>
                   <button onClick={() => signIn(provider.id, { callbackUrl: '/' })} >
-                    Sign in with{' '} {provider.name}
+                    Sign in with{' '} OTP Cloud
                   </button>
                 </div>
               ))}

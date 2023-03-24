@@ -2,7 +2,6 @@ import Layout from "../components/layout"
 import { useSession } from "next-auth/react"
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { signIn } from 'next-auth/react'
 
 import Image from "next/image"
 
@@ -12,8 +11,7 @@ export default function IndexPage() {
   useEffect(()=>{
       console.log("session = ", session)
       if (!session) {
-        // router.push('/auth/signin')
-        signIn('keycloak', { callbackUrl: '/' })
+        router.push('/auth/signin')
       }
       else{
         // maybe go to login page
