@@ -15,7 +15,7 @@ export default function Header({show}) {
   const signOut = async () => {
     await signOutNA();
     destroyCookie(null, 'next-auth.session-token');
-    router.push('/signin');
+    router.push('/auth/signin');
   };
   console.log('show: ', show)
 
