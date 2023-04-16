@@ -22,16 +22,6 @@ export const authOptions: NextAuthOptions = {
   },pages: {
     signIn: '/auth/signin',
   },
-  events: {
-    async signOut({ token, session }) {
-      // Delete auth cookie on signout so it doesn't persist past log out
-      res.setHeader("Set-Cookie", "");
-  
-      // Set token/session to {}, that would update the cilentside token/session as well
-      token = {};
-      session = {};
-    }
-  }
 }
 
 export default NextAuth(authOptions)
