@@ -30,6 +30,7 @@ export const authOptions: NextAuthOptions = {
       // Set token/session to {}, that would update the cilentside token/session as well
       token = {};
       session = {};
+    }
   }
 }
 
