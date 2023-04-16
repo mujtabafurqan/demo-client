@@ -22,10 +22,6 @@ export const authOptions: NextAuthOptions = {
   },pages: {
     signIn: '/auth/signin',
   },
-  session: {
-    jwt: true,
-    maxAge: 1,
-  },
 }
 
 export default NextAuth(authOptions)

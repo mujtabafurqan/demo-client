@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { signIn, signOut, useSession } from "next-auth/react"
+import { signIn, signOut as signOutNA, useSession } from "next-auth/react"
+import { useRouter } from 'next/router';
+import { destroyCookie } from 'nookies';
 import styles from "./header.module.css"
 
 // The approach used in this component shows how to build a sign in and sign out
@@ -8,7 +10,13 @@ import styles from "./header.module.css"
 export default function Header({show}) {
   const { data: session, status } = useSession()
   const loading = status === "loading"
+  const router = useRouter();
 
+  const signOut = async () => {
+    await signOutNA();
+    destroyCookie(null, 'next-auth.session-token');
+    router.push('/signin');
+  };
   console.log('show: ', show)
 
   if (!show) {
