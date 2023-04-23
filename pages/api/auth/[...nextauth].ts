@@ -10,7 +10,7 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.KEYCLOAK_CLIENT_SECRET,
       issuer: process.env.KEYCLOAK_ISSUER,
       authorizationParams: {
-        kc_idp_hint: "samlidp",
+        kc_idp_hint: "saml",
       },
     }),
   ],
